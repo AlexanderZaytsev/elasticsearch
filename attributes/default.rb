@@ -7,7 +7,7 @@ default.elasticsearch[:filename]      = "elasticsearch-#{node.elasticsearch[:ver
 default.elasticsearch[:download_url]  = [node.elasticsearch[:host], node.elasticsearch[:repository], node.elasticsearch[:filename]].join('/')
 
 # === USER & PATHS
-default.elasticsearch[:dir]       = "/srv/data"
+default.elasticsearch[:dir]       = "/srv/www/data"
 default.elasticsearch[:user]      = "elasticsearch"
 default.elasticsearch[:home_dir]  = [node.elasticsearch[:dir], node.elasticsearch[:user]].join('/')
 default.elasticsearch[:command_path]  = [node.elasticsearch[:home_dir], 'bin', 'elasticsearch'].join('/')
