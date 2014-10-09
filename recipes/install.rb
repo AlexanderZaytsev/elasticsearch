@@ -16,6 +16,14 @@ user node[:elasticsearch][:user] do
   action  :create
 end
 
+directory node[:elasticsearch][:dir] do
+  owner node[:elasticsearch][:user]
+  group node[:elasticsearch][:user]
+  mode 0755
+  recursive true
+  action :create
+end
+
 # Install ElasticSearch
 script "install_elasticsearch" do
   interpreter "bash"
