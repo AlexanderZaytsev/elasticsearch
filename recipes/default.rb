@@ -28,12 +28,6 @@ template "elasticsearch.init" do
   mode 0755
 end
 
-# services
-execute "reload-monit" do
-  command "monit reload"
-  action :nothing
-end
-
 # Configration
 instances = node[:opsworks][:layers][:elasticsearch][:instances]
 hosts = instances.map{ |name, attrs| attrs['private_ip'] }
@@ -49,7 +43,7 @@ end
 
 # Monitoring by Monit
 template "elasticsearch.monitrc" do
-  path   "/etc/monit.d/elasticsearch.monitrc"
+  path   "/etc/monit/conf.d/elasticsearch.monitrc"
   source "elasticsearch.monitrc.erb"
   owner 'root'
   mode 0755
