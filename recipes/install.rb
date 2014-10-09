@@ -1,5 +1,6 @@
 #-*- encoding : utf-8 -*-
 elasticsearch = "elasticsearch-#{node[:elasticsearch][:version]}"
+include_recipe "java::default"
 include_recipe "elasticsearch::packages"
 
 # Create user and group
