@@ -28,6 +28,12 @@ template "elasticsearch.init" do
   mode 0755
 end
 
+# services
+execute "reload-monit" do
+  command "monit reload"
+  action :nothing
+end
+
 # Configration
 instances = node[:opsworks][:layers][:elasticsearch][:instances]
 hosts = instances.map{ |name, attrs| attrs['private_ip'] }
