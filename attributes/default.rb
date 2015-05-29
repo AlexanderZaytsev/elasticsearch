@@ -15,8 +15,8 @@ default.elasticsearch[:command_path]  = [node.elasticsearch[:home_dir], 'bin', '
 default.elasticsearch[:path][:conf] = [node.elasticsearch[:home_dir], "config"].join('/')
 default.elasticsearch[:path][:data] = [node.elasticsearch[:home_dir], "data"].join('/')
 default.elasticsearch[:path][:plugins] = [node.elasticsearch[:home_dir], "plugins"].join('/')
-default.elasticsearch[:path][:logs] = ['/var/log',node.elasticsearch[:user]].join('/')
-default.elasticsearch[:path][:pids] = '/var/run'
+default.elasticsearch[:path][:logs] = ['/mnt/lookastic/shared/log',node.elasticsearch[:user]].join('/')
+default.elasticsearch[:path][:pids] = '/mnt/lookastic/shared/pids'
 default.elasticsearch[:pid_file]  = [node.elasticsearch[:path][:pids], "elasticsearch.pid"].join('/')
 
 # === MEMORY
