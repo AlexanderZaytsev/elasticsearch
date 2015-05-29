@@ -19,7 +19,6 @@ template "elasticsearch-env.sh" do
   mode 0755
 end
 
-
 # Init File
 template "elasticsearch.init" do
   path   "/etc/init.d/elasticsearch"
